@@ -1,0 +1,66 @@
+<!-- PAGE 2: appointments.html (list of booked appointments) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+label, input, select, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+button {
+  background: #0056b3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+<body>
+  <div class="container">
+    <h1>All Appointments</h1>
+    <ul id="appointmentsList"></ul>
+  </div>
+
+  <script>
+    const appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    const list = document.getElementById('appointmentsList');
+
+    if (appointments.length === 0) {
+      list.innerHTML = '<li>No appointments yet.</li>';
+    } else {
+      appointments.forEach((appt) => {
+        const li = document.createElement('li');
+        li.textContent = `${appt.date} ${appt.time} - ${appt.service} with ${appt.worker} by ${appt.name}`;
+        list.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
+
+<!-- FILE: appointment.js -->
+
+
+<!-- FILE: styles.css -->
+

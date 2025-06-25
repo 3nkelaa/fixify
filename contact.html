@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Fixify</title>
+  <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --primary-blue: #0073e6;
+      --light-blue: #3da6ff;
+      --white: #ffffff;
+      --dark-gray: #333;
+      --medium-gray: #555;
+      --light-gray: #ddd;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* Updated header styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--primary-blue);
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .logo i {
+      color: var(--primary-blue);
+      margin-right: 8px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.3s ease-in-out;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--medium-gray);
+      font-size: 16px;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    nav a:hover {
+      color: var(--dark-gray);
+    }
+
+    .nav-separator {
+      color: var(--light-gray);
+    }
+
+    .book-service {
+      margin-left: 20px;
+      padding: 8px 15px;
+      background-color: var(--primary-blue);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .book-service:hover {
+      background-color: var(--light-blue);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .layout-wrapper {
+      display: flex;
+      height: 100vh;
+    }
+
+    .contact-panel {
+      width: 50%;
+      background: url('images/photo-1639087603990-35efeed3766d.avif') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeInLeft 1s ease-in-out;
+      position: relative;
+    }
+
+    .contact-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .contact-panel>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-panel h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-panel p {
+      font-size: 1.25rem;
+      margin-bottom: 40px;
+    }
+
+    .detail-item {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .detail-item i {
+      font-size: 24px;
+    }
+
+    .detail-item div span {
+      display: block;
+      font-weight: bold;
+    }
+
+    .detail-item div small {
+      font-weight: 400;
+    }
+
+    .map-panel {
+      width: 50%;
+      animation: fadeInRight 1s ease-in-out;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .highlight {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .highlight:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .layout-wrapper {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .contact-panel {
+        width: 100%;
+        padding: 30px 20px;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+      }
+
+      .contact-panel h1 {
+        font-size: 2rem;
+      }
+
+      .contact-panel p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+
+      .detail-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .detail-item i {
+        font-size: 20px;
+      }
+
+      .detail-item div span {
+        font-size: 0.95rem;
+      }
+
+      .detail-item div small {
+        font-size: 0.85rem;
+      }
+    }
+
+
+    /* / * Footer Styles */
+    .site-footer {
+      background-color: #0073e6;
+      color: #fff;
+      padding: 60px 0 0;
+      font-size: 14px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-column {
+      margin-bottom: 30px;
+    }
+
+    .footer-heading {
+      color: rgb(158, 210, 227);
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--light-blue);
+    }
+
+    .footer-about {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      background: var(--light-blue);
+      transform: translateY(-3px);
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--light-blue);
+      padding-left: 5px;
+    }
+
+    .footer-contact p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    .footer-contact i {
+      margin-right: 10px;
+      color: var(--light-blue);
+      width: 20px;
+      text-align: center;
+    }
+
+    .footer-bottom {
+      background: #005bb5;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-bottom .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      color: #ffffff;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-legal a:hover {
+      color: var(--light-blue);
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom .footer-container {
+        flex-direction: column;
+      }
+
+      .footer-legal {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      /* Mobile menu styles */
+      .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        padding-top: 80px;
+      }
+
+      nav.active {
+        transform: translateX(0);
+      }
+
+      .nav-separator {
+        display: none;
+      }
+
+      .book-service {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        z-index: 1001;
+      }
+
+      .book-service.active {
+        display: block;
+      }
+
+      /* Adjust header padding on mobile */
+      header {
+        padding: 15px 20px;
+      }
+
+      /* Other existing mobile styles... */
+    }
+
+    /* Hero Section with Background Image */
+    .hero-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero-section h1 {
+      margin-top: 60px;
+      color: white;
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      animation: slideDown 1s ease-out;
+    }
+
+    /* Main Content Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    /* Form Section */
+    .form-section {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      animation: slideUp 0.8s ease-out;
+    }
+
+    .form-section h2 {
+      color: #222;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .form-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #007bff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 1em;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .submit-btn:hover {
+      background-color: #0069d9;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Support Section */
+    .support-section {
+      animation: slideRight 0.8s ease-out;
+    }
+
+    .support-section h2 {
+      color: #222;
+      margin-bottom: 20px;
+      font-size: 2rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .support-section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #007bff;
+    }
+
+    .support-section p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .contact-info {
+      margin-top: 30px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+      color: #007bff;
+    }
+
+    /* Newsletter Section */
+    .newsletter {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .newsletter h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .submit-btn:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo"><i class="fa-solid fa-wrench"></i>Fixify</div>
+    <nav id="mainNav">
+      <a href="index.html">HOME</a>
+      <span class="nav-separator">/</span>
+      <a href="about.html">ABOUT</a>
+
+      <span class="nav-separator">/</span>
+
+      <a href="shop.html">SHOP</a>
+      <span class="nav-separator">/</span>
+      <a href="progress.html">PROGRESS</a>
+
+      <span class="nav-separator">/</span>
+      <a href="./appoitments/index.html">DASHBOARD</a>
+    </nav>
+
+    <button class="book-service" onclick="window.location.href='contact.html'">
+      BOOK SERVICE
+    </button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+  </header>
+
+  <section class="hero-section">
+    <h1>Contact Us</h1>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Form Section -->
+    <section class="form-section">
+      <h2>Request Service</h2>
+      <p>Come and visit our quarters or simply send us an email anytime you want. We are open to all suggestions from
+        our audience.</p>
+
+      <form id="serviceRequestForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">LASTNAME</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Your last name" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">ADDRESS</label>
+          <input type="text" id="address" name="address" placeholder="Your address">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">PREFERRED DATE</label>
+            <input type="text" id="date" name="date" placeholder="mm/dd/yyyy" onfocus="(this.type='date')" required>
+          </div>
+          <div class="form-group">
+            <label for="time">PREFERRED TIME</label>
+            <select id="time" name="time" required>
+              <option value="" selected disabled>→Please choose an option→</option>
+              <option value="Morning (8am-12pm)">Morning (8am-12pm)</option>
+              <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+              <option value="Evening (5pm-9pm)">Evening (5pm-9pm)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">TYPE OF SERVICE</label>
+          <select id="service" name="service" required>
+            <option value="" selected disabled>→Please choose an option→</option>
+            <option value="Plumbing Service">Plumbing Service</option>
+            <option value="Boiler Service">Boiler Service</option>
+            <option value="Collection Service">Collection Service</option>
+            <option value="Other Service">Other Service</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">MESSAGE</label>
+          <textarea id="message" name="message" placeholder="Your message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Request</button>
+      </form>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+      <h2>Our Support</h2>
+      <p>Commercial plumbing & boiler services of any kind.</p>
+      <p>Collection services work best for those who'll be in one location for most of the day, maybe you work from
+        home, or have consignments that need to be collected from the office.</p>
+
+      <div class="contact-info">
+        <p><i>📍</i> 310 West 14th North Street, Suite 21<br>New York, NY 10010</p>
+        <p><i>📞</i> Phone: +88 (0) 101 0000 000</p>
+        <p><i>📠</i> Fax: +88 (0) 202 0000 001</p>
+        <p><i>✉️</i> info@bold-themes.com</p>
+        <p><i>✉️</i> support@bold-themes.com</p>
+      </div>
+
+      <div class="newsletter">
+        <h3>NEVER MISS NEWSLETTER SUBSCRIBED</h3>
+        <!-- Newsletter form would go here -->
+      </div>
+    </section>
+  </div>
+
+  <div class="layout-wrapper">
+    <div class="contact-panel animate__animated animate__fadeInLeft">
+      <h1 class="highlight">Contact Nexus</h1>
+      <p class="highlight">We provide warehousing and distribution straight from our HQ.</p>
+
+      <div class="detail-item">
+        <i class="fa-regular fa-clock"></i>
+        <div>
+          <span>WORKING HOURS</span>
+          <small>Mon - Sat 8.00 - 18.00<br>Sunday CLOSED</small>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <span>CALL CENTER</span>
+          <small>1-800-700-600<br>Give us a call 24/7</small>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <span>LOCATION</span>
+          <small>1010 Avenue, New York<br>NY 10018 US</small>
+        </div>
+      </div>
+
+      <div class="detail-item">
+        <i class="fa-regular fa-envelope"></i>
+        <div>
+          <span>WRITE US</span>
+          <small>info@bold-themes.com</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-panel animate__animated animate__fadeInRight">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2926.273899166868!2d20.959317676033297!3d42.82482777115354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13535bf904a0b329%3A0x9c767fc069643180!2sInnovation%20Academy!5e0!3m2!1sen!2s!4v1744396181726!5m2!1sen!2s"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3 class="footer-heading">Fixify Plumbing</h3>
+        <p class="footer-about">24/7 emergency plumbing services you can trust. Serving the community with quality
+          workmanship since 2010.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Services</h3>
+        <ul class="footer-links">
+          <li><a href="#">Emergency Repairs</a></li>
+          <li><a href="#">Drain Cleaning</a></li>
+          <li><a href="#">Pipe Installation</a></li>
+          <li><a href="#">Water Heater Services</a></li>
+          <li><a href="#">Bathroom Remodeling</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3 class="footer-heading">Contact Us</h3>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 123 Plumber Street, Suite 100</p>
+          <p><i class="fas fa-phone"></i> (800) 555-2840</p>
+          <p><i class="fas fa-envelope"></i> info@fixifyplumbing.com</p>
+          <p><i class="fas fa-clock"></i> 24/7 Emergency Service</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p>&copy; 2025 Fixify Plumbing. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Licenses</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </div>
+</body>
+
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // ======================
+    // MOBILE MENU TOGGLE
+    // ======================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+    const bookServiceBtn = document.querySelector('.book-service');
+
+    // Only run menu code if elements exist
+    if (mobileMenuBtn && mainNav) {
+      // Toggle menu when button is clicked
+      mobileMenuBtn.addEventListener('click', function () {
+        const isActive = mainNav.classList.toggle('active');
+
+        // Update button icon
+        mobileMenuBtn.innerHTML = isActive ? '✕' : '☰';
+
+        // Toggle book service button if it exists
+        if (bookServiceBtn) {
+          bookServiceBtn.classList.toggle('active');
+        }
+      });
+
+      // Close menu when nav links are clicked (mobile only)
+      const navLinks = document.querySelectorAll('#mainNav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          if (window.innerWidth <= 768) {
+            mainNav.classList.remove('active');
+            mobileMenuBtn.innerHTML = '☰';
+            if (bookServiceBtn) {
+              bookServiceBtn.classList.remove('active');
+            }
+          }
+        });
+      });
+
+      // Close menu when window is resized above 768px
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) {
+          mainNav.classList.remove('active');
+          mobileMenuBtn.innerHTML = '☰';
+          if (bookServiceBtn) {
+            bookServiceBtn.classList.remove('active');
+          }
+        }
+      });
+    }
+
+    // ======================
+    // FORM SUBMISSION
+    // ======================
+    const serviceRequestForm = document.getElementById('serviceRequestForm');
+    if (serviceRequestForm) {
+      serviceRequestForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Validate required fields
+        let isValid = true;
+        const requiredFields = serviceRequestForm.querySelectorAll('[required]');
+
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+            field.style.borderColor = 'red';
+            isValid = false;
+          } else {
+            field.style.borderColor = '';
+          }
+        });
+
+        if (isValid) {
+          // Form is valid - process submission
+          alert('Thank you for your service request! We will contact you soon.');
+          this.reset();
+        } else {
+          alert('Please fill in all required fields.');
+        }
+      });
+    }
+  });
+
+  const highlights = document.querySelectorAll('.highlight');
+  highlights.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      el.classList.add('animate__pulse');
+    });
+    el.addEventListener('animationend', () => {
+      el.classList.remove('animate__pulse');
+    });
+  });
+</script>

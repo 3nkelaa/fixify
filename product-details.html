@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Fixify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --accent-color: #0073e6;
+            --light-gray: #f5f5f5;
+            --border-color: hsl(0, 0%, 87%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .product-image {
+            background-color: var(--light-gray);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .description {
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+
+        .add-to-cart {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-gray);
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-input {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+        }
+
+        .add-to-cart-btn {
+            padding: 0 30px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--border-color);
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .additional-info {
+            margin-bottom: 30px;
+        }
+
+        .cart-summary {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .cart-empty {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        .related-products {
+            margin-bottom: 30px;
+        }
+
+        .product-list {
+            list-style: none;
+        }
+
+        .product-list li {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .product-list li span {
+            display: block;
+            color: var(--secondary-color);
+            font-weight: normal;
+            margin-left: 20px;
+        }
+
+        .product-categories {
+            margin-bottom: 30px;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="product-image">
+            <img src="images/10006818-Worx-Garden___Outdoor-Garden_Power_Tools_-_Hero_2-removebg-preview.png"
+                alt="SLA-M 310 wp 60 Cell Solar">
+        </div>
+
+        <div class="product-info">
+            <div class="price">$799.90</div>
+
+            <p class="description">
+                Per alexum adversarium regerbendunt ei, semper apelian singalis mel in. Cu haloio ludico rationtios eum.
+                Sed dicat esiamod id, sed quis eius appareat el. Nusquam propriae detracto vis no, sit ex nani denique.
+                Cu vis dignissim gubergen.
+            </p>
+
+            <div class="add-to-cart">
+                <div class="quantity-control">
+                    <button class="quantity-btn">-</button>
+                    <input type="number" class="quantity-input" value="1" min="1">
+                    <button class="quantity-btn">+</button>
+                </div>
+                <button class="add-to-cart-btn">ADD TO CART</button>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="additional-info">
+                <h2 class="section-title">Description</h2>
+                <p>Additional information</p>
+
+                <h3 class="section-title">Description</h3>
+                <p>
+                    Id mel delenti thermis liberavisse. Mec te nisl omnes imperies, per movet sodiam antopam eu.
+                    Manere aliquam denique mel id, ad pri hendretti repudlandae. Dolorem complectitur vel el.
+                    Suscipit corrumpit sed id, vim affert eleifend conssectetuer an. Ex vel illum desecunt,
+                    pri autem platonem id, novum quaeque utneque his at.
+                </p>
+            </div>
+
+            <div class="divider"></div>
+
+
+
+
+        </div>
+    </div>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const product = JSON.parse(localStorage.getItem('currentProduct'));
+
+            if (product) {
+
+                document.querySelector('.product-image img').src = product.image;
+                document.querySelector('.product-image img').alt = product.name;
+                document.querySelector('.price').textContent = `$${product.price.toFixed(2)}`;
+
+
+                document.querySelector('.add-to-cart-btn').addEventListener('click', () => {
+                    const quantity = parseInt(document.querySelector('.quantity-input').value) || 1;
+
+
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+
+                    const existingItem = cart.find(item => item.id === product.id);
+
+                    if (existingItem) {
+                        existingItem.quantity += quantity;
+                    } else {
+                        cart.push({
+                            id: product.id,
+                            name: product.name,
+                            type: product.type,
+                            price: product.price,
+                            image: product.image,
+                            quantity: quantity
+                        });
+                    }
+
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+
+                    alert(`${product.name} has been added to your cart!`);
+                });
+            } else {
+
+                window.location.href = 'shop.html';
+            }
+
+
+            updateCartSummary();
+        });
+
+        function updateCartSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartSummary = document.querySelector('.cart-summary');
+
+            if (cart.length === 0) {
+                cartSummary.innerHTML = `
+            <h2 class="section-title">Cart</h2>
+            <p class="cart-empty">No product in the cart.</p>
+        `;
+            } else {
+                let html = `
+            <h2 class="section-title">Cart</h2>
+            <ul style="list-style:none; margin-top:10px;">
+        `;
+
+                cart.forEach(item => {
+                    html += `
+                <li style="margin-bottom:10px; display:flex; justify-content:space-between;">
+                    <span>${item.name} (${item.quantity})</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                </li>
+            `;
+                });
+
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+                html += `
+            </ul>
+            <div style="margin-top:15px; padding-top:15px; border-top:1px solid #ddd; font-weight:bold;">
+                Subtotal: $${subtotal.toFixed(2)}
+            </div>
+            <a href="cart.html" style="display:inline-block; margin-top:15px; padding:8px 15px; background:#333; color:white; text-decoration:none; border-radius:4px;">View Cart</a>
+        `;
+
+                cartSummary.innerHTML = html;
+            }
+        }
+    </script>
+</body>
+
+</html>
